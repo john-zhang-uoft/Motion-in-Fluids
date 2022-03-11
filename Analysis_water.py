@@ -27,13 +27,15 @@ corrected_velocity = velocity / C
 # diameters are currently in mm
 diameter = diameter * 0.001
 
-density = 1.26 * 1000  # in kg/m^3
-viscosity = 0.934  # in kg/m*s
+density = 1 * 1000  # in kg/m^3
+viscosity = 0.001  # in kg/m*s
 
 reynolds = density * (diameter / 6) * velocity / viscosity
 print(reynolds)
-
 radius = diameter / 2
+
+for i in radius:
+    print(i)
 
 plt.errorbar(x=unumpy.nominal_values(radius), y=unumpy.nominal_values(velocity), yerr=unumpy.std_devs(velocity),
              xerr=unumpy.std_devs(radius), fmt='bo', ecolor='black', linestyle='None')

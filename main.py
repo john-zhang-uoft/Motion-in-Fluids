@@ -30,21 +30,21 @@ from scipy import stats
     # time = np.array(data['Time(sec)'].tolist())
 
 
-# files = [f for f in listdir('C:\\Users\\johnz\\PycharmProjects\\Motion in Fluids\\Terminal_Velocities')]
-#
-# for file in files:
-#     data = pd.read_csv(f'Terminal_Velocities/{file}', sep=',', header=0)
-#     # sns.lineplot(x=data['Time(sec)'], y=data['Position(mm)'], color='blue', alpha=0.4)
-#     # plt.title(file)
-#     # plt.show()
-#
-#     data['Position(mm)'] = data['Position(mm)'] * 0.001     # convert to meters
-#     position = np.array(data['Position(mm)'].tolist())
-#     time = np.array(data['Time(sec)'].tolist())
-#
-#     slope, intercept, r, p, se = stats.linregress(time, position)
-#     print(str(slope) + ',' + str(r ** 2) + ',' + str(se))
-#
+files = [f for f in listdir('C:\\Users\\johnz\\PycharmProjects\\Motion in Fluids\\Terminal_Velocities')]
+
+for file in files:
+    data = pd.read_csv(f'Terminal_Velocities/{file}', sep=',', header=0)
+    sns.lineplot(x=data['Time(sec)'], y=data['Position(mm)'], color='blue', alpha=0.4)
+    plt.title(file)
+    plt.show()
+
+    data['Position(mm)'] = data['Position(mm)'] * 0.001     # convert to meters
+    position = np.array(data['Position(mm)'].tolist())
+    time = np.array(data['Time(sec)'].tolist())
+
+    slope, intercept, r, p, se = stats.linregress(time, position)
+    print(str(slope) + ',' + str(r ** 2) + ',' + str(se))
+
 
 #
 # terminal_velocity_df = pd.read_csv('Cleaned_Terminal_Velocities.txt', header=0)
